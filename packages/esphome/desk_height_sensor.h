@@ -16,7 +16,7 @@ public:
 
   float get_setup_priority() const override { return esphome::setup_priority::DATA; }
 
-  int hex_to_int(byte s)
+  int hex_to_int(uint8_t s)
   {
     std::bitset<8> b(s);
 
@@ -67,7 +67,7 @@ public:
     return 0;
   }
 
-  bool is_decimal(byte b)
+  bool is_decimal(uint8_t b)
   {
     return (b & 0x80) == 0x80;
   }
@@ -81,7 +81,7 @@ public:
   {
     while (available() > 0)
     {
-      byte incomingByte = read();
+      uint8_t incomingByte = read();
       // ESP_LOGD("DEBUG", "Incoming byte is: %08x", incomingByte);
       
       // First byte, start of a packet

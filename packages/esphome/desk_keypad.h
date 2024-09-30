@@ -28,7 +28,7 @@ public:
   {
     while (available() > 0)
     {
-      byte incomingByte = read();
+      uint8_t incomingByte = read();
       //ESP_LOGD("DEBUG", "Incoming byte is: %08x", incomingByte);
       // First byte, start of a packet
       if (incomingByte == 0x9b)
